@@ -1,9 +1,15 @@
 package model;
 
+import lombok.*;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 @Entity
-public class Client {
+@Setter
+@Getter
+@NoArgsConstructor @AllArgsConstructor
+public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,4 +19,6 @@ public class Client {
     private Trader hisTrader;
     @OneToMany(mappedBy = "client")
     private List<Order> orders;
+
+
 }

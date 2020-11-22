@@ -1,9 +1,15 @@
 package model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class WarehouseMan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
