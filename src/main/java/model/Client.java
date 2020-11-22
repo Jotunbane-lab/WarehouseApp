@@ -8,7 +8,7 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String Adress;
+    private String adress;
     @ManyToOne
     private Trader hisTrader;
     @OneToMany(mappedBy = "client")
