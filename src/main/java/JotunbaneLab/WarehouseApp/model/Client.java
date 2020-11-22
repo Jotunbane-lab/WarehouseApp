@@ -1,4 +1,4 @@
-package model;
+package JotunbaneLab.WarehouseApp.model;
 
 import lombok.*;
 

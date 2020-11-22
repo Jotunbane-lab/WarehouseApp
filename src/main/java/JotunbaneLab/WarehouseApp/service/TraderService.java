@@ -1,6 +1,6 @@
-package service;
+package JotunbaneLab.WarehouseApp.service;
 
-import model.Product;
+import JotunbaneLab.WarehouseApp.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +9,7 @@ import java.util.List;
 public class TraderService {
 
     public boolean createOrder(List<Product> products){
+
         return false;
     }
 
