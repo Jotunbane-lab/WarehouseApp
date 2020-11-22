@@ -1,22 +1,23 @@
 package model;
 
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
-
+@Entity
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    private Long traderId;
+    private Trader trader;
     @ManyToOne
-    private Long clientId;
+    private Client client;
     @ManyToOne
-    private Long warehouseManId;
-    @OneToMany(mappedBy = "orderId")
+    private WarehouseMan warehouseMan;
+    @OneToMany(mappedBy = "order")
     private List<Product> productList;
     private String comment;
     @ManyToOne
-    private Long storagePlaceId;
+    private StoragePlace storingPlace;
     private boolean isDone;
 
 }
