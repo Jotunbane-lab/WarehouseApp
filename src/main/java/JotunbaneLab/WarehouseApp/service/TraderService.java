@@ -13,5 +13,17 @@ public class TraderService {
         return false;
     }
 
+    public boolean deleteOrder(Long orderId){
+        return false;
+    }
+
+    public boolean addComment(Long orderId){
+        return false;
+    }
+
+    public List<Product> getStocks(){
+        return  null;
+    }
+
 
 }
