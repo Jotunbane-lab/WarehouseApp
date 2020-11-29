@@ -21,6 +21,7 @@ public class Product {
     @ManyToOne
     private StoragePlace storingPlace;
     private boolean isReserved;
+    private boolean isAddedToOrder;
 
     @ManyToOne
     private Order order;
