@@ -3,10 +3,12 @@ package JotunbaneLab.WarehouseApp.service;
 import JotunbaneLab.WarehouseApp.model.Order;
 import JotunbaneLab.WarehouseApp.model.Product;
 import JotunbaneLab.WarehouseApp.model.StoragePlace;
+import JotunbaneLab.WarehouseApp.repository.WarehouseManRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class WarehouseManService {
+    WarehouseManRepository warehouseManRepository;
 
     public void takeOrder(Order order){}
 
