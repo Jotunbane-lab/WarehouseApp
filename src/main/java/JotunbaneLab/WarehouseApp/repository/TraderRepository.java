@@ -1,6 +1,6 @@
 package JotunbaneLab.WarehouseApp.repository;
 
-import JotunbaneLab.WarehouseApp.model.Trader;
+import JotunbaneLab.WarehouseApp.model.entity.Trader;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

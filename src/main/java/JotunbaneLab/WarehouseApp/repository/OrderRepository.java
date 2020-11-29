@@ -1,6 +1,6 @@
 package JotunbaneLab.WarehouseApp.repository;
 
-import JotunbaneLab.WarehouseApp.model.Order;
+import JotunbaneLab.WarehouseApp.model.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

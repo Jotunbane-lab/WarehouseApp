@@ -1,16 +1,23 @@
 package JotunbaneLab.WarehouseApp.service;
 
-import JotunbaneLab.WarehouseApp.model.Order;
-import JotunbaneLab.WarehouseApp.model.Product;
-import JotunbaneLab.WarehouseApp.model.StoragePlace;
+import JotunbaneLab.WarehouseApp.model.entity.Order;
+import JotunbaneLab.WarehouseApp.model.entity.Product;
+import JotunbaneLab.WarehouseApp.model.entity.StoragePlace;
 import JotunbaneLab.WarehouseApp.repository.WarehouseManRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class WarehouseManService {
-    WarehouseManRepository warehouseManRepository;
 
-    public void takeOrder(Order order){}
+    WarehouseManRepository repository;
+
+    public WarehouseManService(WarehouseManRepository repository) {
+        this.repository = repository;
+    }
+
+    public void takeOrder(Order order){
+
+    }
 
     public void moveProducts(Product product){}
 

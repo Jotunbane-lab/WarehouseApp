@@ -1,7 +1,7 @@
 package JotunbaneLab.WarehouseApp.service;
 
 
-import JotunbaneLab.WarehouseApp.model.Product;
+import JotunbaneLab.WarehouseApp.model.entity.Product;
 import JotunbaneLab.WarehouseApp.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 

@@ -11,7 +11,12 @@ public class WarehouseAppApplication {
 		System.out.println("Starting App");
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-
+//		Order order = new Order();
+//		WarehouseMan warehouseMan = new WarehouseMan();
+//		WarehouseManService warehouseManService = new WarehouseManService();
+//
+//		warehouseManService.takeOrder(order);
+//
 
 
 	}
