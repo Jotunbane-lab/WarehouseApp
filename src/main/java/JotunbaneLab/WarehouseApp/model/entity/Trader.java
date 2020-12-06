@@ -17,7 +17,7 @@ public class Trader {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "traderId")
+    @OneToMany(mappedBy = "id")
     private List<Order> orderList;
     @OneToMany(mappedBy = "hisTrader")
     private List<Client> clients;

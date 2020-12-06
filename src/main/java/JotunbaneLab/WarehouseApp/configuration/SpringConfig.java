@@ -1,5 +1,6 @@
 package JotunbaneLab.WarehouseApp.configuration;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +16,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"configuration", "service"})
-@EnableJpaRepositories("repository")
+@ComponentScan(basePackages = {"JotunbaneLab.WarehouseApp.configuration", "JotunbaneLab.WarehouseApp.service"})
+@EnableJpaRepositories("JotunbaneLab.WarehouseApp.repository")
 @EnableTransactionManagement
 public class SpringConfig {
 
@@ -35,7 +36,7 @@ public class SpringConfig {
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(getDateSource());
         entityManager.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        entityManager.setPackagesToScan("model");
+        entityManager.setPackagesToScan("JotunbaneLab.WarehouseApp.model.entity");
 
         return entityManager;
     }
