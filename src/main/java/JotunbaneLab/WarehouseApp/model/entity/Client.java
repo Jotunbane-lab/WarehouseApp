@@ -19,6 +19,7 @@ public class Client implements Serializable {
     private Trader hisTrader;
     @OneToMany(mappedBy = "client")
     private List<Order> orders;
+    private String password;
 
 
 }

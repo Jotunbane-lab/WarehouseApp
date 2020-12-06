@@ -17,5 +17,6 @@ public class WarehouseMan {
     private String name;
     @OneToMany(mappedBy = "warehouseMan")
     private List<Order> orderList;
+    private String password;
 
 }
