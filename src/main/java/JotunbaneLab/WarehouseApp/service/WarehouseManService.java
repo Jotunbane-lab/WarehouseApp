@@ -11,12 +11,18 @@ public class WarehouseManService {
 
     WarehouseManRepository repository;
 
+
+
     public WarehouseManService(WarehouseManRepository repository) {
         this.repository = repository;
     }
 
-    public void takeOrder(Order order){
+    public void takeOrder(Order order, Long warehouseManId){
+        Long orderId = order.getId();
+    }
 
+    public Long getIdByLogin(String login){
+        return 0L;
     }
 
     public void moveProducts(Product product){}
