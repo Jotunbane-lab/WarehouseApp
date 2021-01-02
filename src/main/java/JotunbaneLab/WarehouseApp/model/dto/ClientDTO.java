@@ -1,7 +1,4 @@
 package JotunbaneLab.WarehouseApp.model.dto;
-
-import JotunbaneLab.WarehouseApp.model.entity.Order;
-import JotunbaneLab.WarehouseApp.model.entity.Trader;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +14,7 @@ public class ClientDTO {
     private String name;
     private String adress;
     private TraderDTO trader;
-    private List<Order> orders;
+    private List<OrderDTO> orders;
     private String password;
 
 

@@ -6,6 +6,9 @@ import JotunbaneLab.WarehouseApp.repository.ClientRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ClientService {
     ClientRepository clientRepository;
@@ -20,5 +23,12 @@ public class ClientService {
         System.out.println("Client added: " + clientDTO.getName() + " " + clientDTO.getAdress());
         Client client = modelMapper.map(clientDTO, Client.class);
         clientRepository.save(client);
+    }
+
+    public List<ClientDTO> getAllClients() {
+        return clientRepository.findAll()
+                .stream()
+                .map(client -> modelMapper.map(client, ClientDTO.class))
+                .collect(Collectors.toList());
     }
 }

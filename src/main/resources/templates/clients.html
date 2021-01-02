@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Toolset</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">adress</th>
+    </thead>
+    <tbody>
+    <tr th:each="client : ${clientList}">
+        <form action="/deleteClient" method="post", th:object="${client}">
+            <td type="number" th:text="${client.id}"/>
+            <td th:text="${client.name}"/>
+            <td th:text="${client.adress}"/>
+            <td>
+                <input type="hidden" name="id" th:value="${client.id}">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+
+<form th:action="@{/addClient}">
+    <button type="submit">Dodaj klienta</button>
+</form>
+<form th:action="@{/admin}">
+    <button type="submit">Powrót</button>
+</form>
+
+</body>
+</html>
