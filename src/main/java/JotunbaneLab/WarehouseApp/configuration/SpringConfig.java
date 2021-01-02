@@ -1,5 +1,6 @@
 package JotunbaneLab.WarehouseApp.configuration;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -53,6 +54,9 @@ public class SpringConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {return NoOpPasswordEncoder.getInstance();}
+
+    @Bean
+    public ModelMapper modelMapper(){return new ModelMapper();}
 
 
 }

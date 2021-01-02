@@ -19,7 +19,7 @@ public class Trader {
     private String name;
     @OneToMany(mappedBy = "id")
     private List<Order> orderList;
-    @OneToMany(mappedBy = "hisTrader")
+    @OneToMany(mappedBy = "trader")
     private List<Client> clients;
     private String password;
 }

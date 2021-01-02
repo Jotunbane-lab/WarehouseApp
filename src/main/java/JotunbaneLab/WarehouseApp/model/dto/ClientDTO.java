@@ -16,7 +16,7 @@ public class ClientDTO {
     private Long id;
     private String name;
     private String adress;
-    private TraderDTO hisTrader;
+    private TraderDTO trader;
     private List<Order> orders;
     private String password;
 

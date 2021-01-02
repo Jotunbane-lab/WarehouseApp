@@ -16,7 +16,7 @@ public class Client implements Serializable {
     private String name;
     private String adress;
     @ManyToOne
-    private Trader hisTrader;
+    private Trader trader;
     @OneToMany(mappedBy = "client")
     private List<Order> orders;
     private String password;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Toolset</title>
+</head>
+<body>
+
+<form th:action="@{/addClient}" method="post" th:object="${newClient}">
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p>Adress: <input type="text" th:field="*{adress}"/></p>
+
+    <p><input type="submit" value="Submit"/> </p>
+    <p><input type="reset" value="Reset"/> </p>
+</form>
+
+<form th:action="@{/admin}">
+    <button type="submit">Powrót</button>
+</form>
+
+</body>
+</html>
