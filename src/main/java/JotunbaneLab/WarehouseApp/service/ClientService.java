@@ -4,6 +4,8 @@ import JotunbaneLab.WarehouseApp.model.dto.ClientDTO;
 import JotunbaneLab.WarehouseApp.model.entity.Client;
 import JotunbaneLab.WarehouseApp.repository.ClientRepository;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
+import org.modelmapper.spi.MatchingStrategy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,9 +28,15 @@ public class ClientService {
     }
 
     public List<ClientDTO> getAllClients() {
+/*        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);*/
         return clientRepository.findAll()
                 .stream()
                 .map(client -> modelMapper.map(client, ClientDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    public void deleteClient(long id){
+        clientRepository.deleteById(id);
     }
 }

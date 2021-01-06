@@ -34,13 +34,20 @@ public class AdminController {
     public String addClient(@ModelAttribute ClientDTO clientDTO) {
         clientService.addClient(clientDTO);
 
-        return "admin";
+        return "redirect:/clients";
     }
 
     @GetMapping("/clients")
     public ModelAndView getAllClients() {
         List<ClientDTO> clientDTOList = clientService.getAllClients();
         return new ModelAndView("clients", "clientList", clientDTOList);
+    }
+
+    @PostMapping("/deleteClient")
+    public String deleteClient(@ModelAttribute ClientDTO clientDTO){
+        clientService.deleteClient(clientDTO.getId());
+        System.out.println("Usunąłem klienta:"+ clientDTO.getName());
+        return "redirect:/clients";
     }
 
 
