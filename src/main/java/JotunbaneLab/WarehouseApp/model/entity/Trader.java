@@ -22,4 +22,5 @@ public class Trader {
     @OneToMany(mappedBy = "trader")
     private List<Client> clients;
     private String password;
+    private String role;
 }

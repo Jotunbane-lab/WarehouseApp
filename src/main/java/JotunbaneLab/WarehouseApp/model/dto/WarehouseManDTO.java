@@ -18,5 +18,6 @@ public class WarehouseManDTO {
     private String name;
     private List<Order> orderList;
     private String password;
+    private String role;
 
 }

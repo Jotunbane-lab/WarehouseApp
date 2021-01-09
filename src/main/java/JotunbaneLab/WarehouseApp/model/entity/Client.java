@@ -20,6 +20,7 @@ public class Client implements Serializable {
     @OneToMany(mappedBy = "client")
     private List<Order> orders;
     private String password;
+    private String role;
 
 
 }

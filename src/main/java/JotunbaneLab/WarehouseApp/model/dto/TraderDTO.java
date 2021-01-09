@@ -18,4 +18,5 @@ public class TraderDTO {
     private List<Order> orderList;
     private List<ClientDTO> clients;
     private String password;
+    private String role;
 }
