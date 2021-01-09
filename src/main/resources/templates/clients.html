@@ -18,6 +18,7 @@
             <td type="number" th:text="${client.id}"/>
             <td th:text="${client.name}"/>
             <td th:text="${client.adress}"/>
+            <td th:text="${client.login}"/>
             <td>
                 <input type="hidden" name="id" th:value="${client.id}">
                 <button type="submit" class="btn btn-danger">Remove</button>

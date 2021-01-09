@@ -18,6 +18,7 @@ public class ClientDTO {
    // private List<OrderDTO> orders = new ArrayList<>();
     private String password;
     private String role;
+    private String login;
 
 
 }
