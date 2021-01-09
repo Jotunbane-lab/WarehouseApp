@@ -24,30 +24,31 @@ public class AdminController {
         return new ModelAndView("admin");
     }
 
-    @GetMapping("/addClient")
+    @GetMapping("/admin/addClient")
     public ModelAndView getAddClientView() {
         return new ModelAndView("addClient", "newClient", new ClientDTO());
     }
 
 
-    @PostMapping("/addClient")
+    @PostMapping("/admin/addClient")
     public String addClient(@ModelAttribute ClientDTO clientDTO) {
         clientService.addClient(clientDTO);
 
-        return "redirect:/clients";
+        return "redirect:/admin/clients";
     }
 
-    @GetMapping("/clients")
+    @GetMapping("/admin/clients")
     public ModelAndView getAllClients() {
         List<ClientDTO> clientDTOList = clientService.getAllClients();
         return new ModelAndView("clients", "clientList", clientDTOList);
     }
 
-    @PostMapping("/deleteClient")
+    @PostMapping("/admin/deleteClient")
     public String deleteClient(@ModelAttribute ClientDTO clientDTO){
+        System.out.println("Usuwam klienta:"+ clientDTO.getName());
         clientService.deleteClient(clientDTO.getId());
-        System.out.println("Usunąłem klienta:"+ clientDTO.getName());
-        return "redirect:/clients";
+
+        return "redirect:/admin/clients";
     }
 
 

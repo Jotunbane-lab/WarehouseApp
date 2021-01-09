@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <tr th:each="client : ${clientList}">
-        <form action="/deleteClient" method="post", th:object="${client}">
+        <form action="/admin/deleteClient" method="post", th:object="${client}">
             <td type="number" th:text="${client.id}"/>
             <td th:text="${client.name}"/>
             <td th:text="${client.adress}"/>
@@ -28,7 +28,7 @@
     </tbody>
 </table>
 
-<form th:action="@{/addClient}">
+<form th:action="@{/admin/addClient}">
     <button type="submit">Dodaj klienta</button>
 </form>
 <form th:action="@{/admin}">

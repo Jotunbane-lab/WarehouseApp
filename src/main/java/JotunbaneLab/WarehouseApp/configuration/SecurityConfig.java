@@ -27,19 +27,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder.encode("admin")).roles("ADMIN");
 
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("SELECT U.LOGIN, U.PASSWORD, 1 FROM USER U WHERE U.LOGIN=?")
-                .authoritiesByUsernameQuery("SELECT U.LOGIN, 'ROLE_USER', 1 FROM USER U WHERE U.LOGIN=?")
+                .usersByUsernameQuery("SELECT U.LOGIN, U.PASSWORD, 1 FROM USERR U WHERE U.LOGIN=?")
+                .authoritiesByUsernameQuery("SELECT U.LOGIN, U.ROLE, 1 FROM USERR U WHERE U.LOGIN=?")
                 .dataSource(jdbcTemplate.getDataSource())
                 .passwordEncoder(passwordEncoder);
+
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/", "/index", "/index/**")
-                .hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
-                .antMatchers(HttpMethod.GET, "/admin")
-                .hasAuthority("ROLE_ADMIN")
+                .antMatchers("/","/index", "/index/**").hasAnyRole("ADMIN", "CLIENT")
+                .antMatchers("/admin", "/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .csrf().disable()
