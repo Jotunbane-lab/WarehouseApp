@@ -15,7 +15,7 @@ public class ClientDTO {
     private String name;
     private String adress;
     private TraderDTO trader;
-    private List<OrderDTO> orders = new ArrayList<>();
+   // private List<OrderDTO> orders = new ArrayList<>();
     private String password;
     private String role;
 
