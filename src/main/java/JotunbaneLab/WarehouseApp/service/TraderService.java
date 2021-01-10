@@ -1,7 +1,6 @@
 package JotunbaneLab.WarehouseApp.service;
 
 import JotunbaneLab.WarehouseApp.model.entity.Product;
-import JotunbaneLab.WarehouseApp.repository.TraderRepository;
 import JotunbaneLab.WarehouseApp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 

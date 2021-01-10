@@ -3,22 +3,17 @@ package JotunbaneLab.WarehouseApp.service;
 import JotunbaneLab.WarehouseApp.model.entity.Order;
 import JotunbaneLab.WarehouseApp.model.entity.Product;
 import JotunbaneLab.WarehouseApp.model.entity.StoragePlace;
-import JotunbaneLab.WarehouseApp.model.entity.WarehouseMan;
-import JotunbaneLab.WarehouseApp.repository.WarehouseManRepository;
-import lombok.AllArgsConstructor;
-import org.hibernate.service.spi.InjectService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import JotunbaneLab.WarehouseApp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class WarehouseManService {
 
-    WarehouseManRepository repository;
+    UserRepository userRepository;
 
 
-    public WarehouseManService(WarehouseManRepository repository) {
-        this.repository = repository;
+    public WarehouseManService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public void takeOrder(Order order, Long warehouseManId){
