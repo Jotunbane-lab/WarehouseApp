@@ -2,13 +2,14 @@ package JotunbaneLab.WarehouseApp.service;
 
 import JotunbaneLab.WarehouseApp.model.entity.Product;
 import JotunbaneLab.WarehouseApp.repository.TraderRepository;
+import JotunbaneLab.WarehouseApp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class TraderService {
-    TraderRepository traderRepository;
+    UserRepository userRepository;
 
     public boolean createOrder(List<Product> products){
 

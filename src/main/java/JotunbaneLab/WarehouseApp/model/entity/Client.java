@@ -12,8 +12,6 @@ import java.util.List;
 @Getter
 @NoArgsConstructor @AllArgsConstructor
 public class Client extends User implements Serializable {
-//    @Id
-//    private long id;
     private String name;
     private String adress;
     @ManyToOne

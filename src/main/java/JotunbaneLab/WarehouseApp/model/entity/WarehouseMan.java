@@ -3,6 +3,7 @@ package JotunbaneLab.WarehouseApp.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -10,14 +11,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class WarehouseMan {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class WarehouseMan extends User implements Serializable {
+
     private String name;
     @OneToMany(mappedBy = "warehouseMan")
     private List<Order> orderList;
-    private String password;
-    private String role;
-
 }

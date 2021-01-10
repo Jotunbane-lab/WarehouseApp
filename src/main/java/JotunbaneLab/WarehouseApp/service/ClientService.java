@@ -2,6 +2,7 @@ package JotunbaneLab.WarehouseApp.service;
 
 import JotunbaneLab.WarehouseApp.model.dto.ClientDTO;
 import JotunbaneLab.WarehouseApp.model.entity.Client;
+import JotunbaneLab.WarehouseApp.repository.OrderRepository;
 import JotunbaneLab.WarehouseApp.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class ClientService {
     UserRepository userRepository;
+    OrderRepository orderRepository;
     ModelMapper modelMapper;
 
     public ClientService(UserRepository userRepository, ModelMapper modelMapper) {
@@ -26,8 +28,6 @@ public class ClientService {
     }
 
     public List<ClientDTO> getAllClients() {
-/*        modelMapper.getConfiguration()
-                .setMatchingStrategy(MatchingStrategies.LOOSE);*/
         return userRepository.findAll()
                 .stream()
                 .map(client -> modelMapper.map(client, ClientDTO.class))
