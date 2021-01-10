@@ -16,8 +16,9 @@ public class ClientService {
     OrderRepository orderRepository;
     ModelMapper modelMapper;
 
-    public ClientService(UserRepository userRepository, ModelMapper modelMapper) {
+    public ClientService(UserRepository userRepository, OrderRepository orderRepository, ModelMapper modelMapper) {
         this.userRepository = userRepository;
+        this.orderRepository = orderRepository;
         this.modelMapper = modelMapper;
     }
 
@@ -28,6 +29,8 @@ public class ClientService {
     }
 
     public List<ClientDTO> getAllClients() {
+
+
         return userRepository.findAll()
                 .stream()
                 .map(client -> modelMapper.map(client, ClientDTO.class))

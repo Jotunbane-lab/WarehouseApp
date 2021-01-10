@@ -23,8 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("Admin")
-                .password(passwordEncoder.encode("admin")).roles("ADMIN");
+                .withUser("A")
+                .password(passwordEncoder.encode("a")).roles("ADMIN");
 
         auth.jdbcAuthentication()
                 .usersByUsernameQuery("SELECT U.LOGIN, U.PASSWORD, 1 FROM USERR U WHERE U.LOGIN=?")

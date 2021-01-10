@@ -12,6 +12,9 @@ import java.util.List;
 @Getter
 @NoArgsConstructor @AllArgsConstructor
 public class Client extends User implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String adress;
     @ManyToOne

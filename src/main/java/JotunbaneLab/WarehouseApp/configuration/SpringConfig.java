@@ -1,7 +1,8 @@
 package JotunbaneLab.WarehouseApp.configuration;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.modelmapper.convention.MatchingStrategies;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -58,5 +59,11 @@ public class SpringConfig {
     @Bean
     public ModelMapper modelMapper(){return new ModelMapper();}
 
+//    @Bean
+//    public ModelMapper modelMapper(){
+//        ModelMapper modelMapper = new ModelMapper();
+//        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+//        return modelMapper;}
+//
 
 }
