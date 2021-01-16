@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor @AllArgsConstructor
+@Table(name = "client")
 public class Client extends User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

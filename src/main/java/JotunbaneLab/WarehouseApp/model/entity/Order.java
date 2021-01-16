@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
+@Table(name = "order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
