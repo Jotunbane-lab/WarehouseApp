@@ -29,10 +29,9 @@ public class ClientService {
     }
 
     public List<ClientDTO> getAllClients() {
-
-
         return userRepository.findAll()
                 .stream()
+                .filter(o -> o.getRole().equals("ROLE_CLIENT"))
                 .map(client -> modelMapper.map(client, ClientDTO.class))
                 .collect(Collectors.toList());
     }

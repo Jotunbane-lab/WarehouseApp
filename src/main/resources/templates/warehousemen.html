@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Toolset</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">login</th>
+    </thead>
+    <tbody>
+    <tr th:each="warehouseman : ${warehousemanList}">
+        <form action="/admin/deleteWarehouseman" method="post", th:object="${warehouseman}">
+            <td type="number" th:text="${warehouseman.id}"/>
+            <td th:text="${warehouseman.name}"/>
+            <td th:text="${warehouseman.login}"/>
+            <td>
+                <input type="hidden" name="id" th:value="${warehouseman.id}">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+
+<form th:action="@{/admin/addWarehouseman}">
+    <button type="submit">Dodaj magazyniera</button>
+</form>
+<form th:action="@{/admin}">
+    <button type="submit">Powrót</button>
+</form>
+
+</body>
+</html>
